@@ -1,0 +1,252 @@
+html {
+  height: 100%;
+}
+body {
+  background: #bcdee7 url("./images/55.JPG") no-repeat center center fixed;
+  background-size: 120% auto;
+  position: fixed;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  font: normal 14px/1.618em "Hind", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body:before {
+  content: "";
+  height: 0px;
+  padding: 0px;
+  border: 110em solid #313440;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  z-index: 2;
+  display: block;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  animation: puff_portrait 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+      forwards,
+    borderRadius 0.2s 2.3s linear forwards;
+}
+
+.profile-card {
+  background: #ffb300;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 70px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
+    0px 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+.profile-card .nav {
+  color: #bd7031;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 50px;
+  font-family: Lobster;
+}
+
+.profile-card .nav img {
+  height: 50px;
+  margin-top: 15px;
+}
+
+.profile-card .product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 5%;
+  border-top: 1px solid #e3e6ea;
+}
+
+.profile-card .quant {
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+}
+
+.profile-card .prix {
+  display: none;
+}
+.profile-card .remove {
+  color: rgb(32, 23, 23);
+  font-size: 30px;
+  padding: 0 15px;
+}
+.profile-card .option {
+  color: #aab8c2;
+  display: flex;
+  justify-content: space-between;
+  width: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile-card .name {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #525354;
+}
+
+.profile-card .litrage {
+  color: darkgray;
+  font-weight: 10;
+}
+
+.profile-card .plus,
+.min {
+  color: rgb(0, 0, 0);
+  font-size: 28px;
+  background: #e1e8ee;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-card .price {
+  font-weight: 100;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+.profile-card .like {
+  font-size: 30px;
+}
+.profile-card .sum-total {
+  width: 220px;
+  padding: 0 5px;
+  font-size: 22px;
+  margin-left: 300px;
+  background: linear-gradient(to bottom, #967e3d, #976237);
+
+  color: rgb(131, 7, 7);
+  border: 1px solid rgb(197, 173, 151);
+  border-radius: 20px;
+}
+
+@media screen and (min-height: 480px) {
+  .profile-card {
+    animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+      moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+      moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+      materia_portrait 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  }
+}
+
+@keyframes init {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes puff_portrait {
+  0% {
+    top: 100%;
+    height: 0px;
+    padding: 0px;
+  }
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
+}
+
+@keyframes borderRadius {
+  0% {
+    -webkit-border-radius: 50%;
+  }
+  100% {
+    border-radius: 0px;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    background: #ffb300;
+    top: 100%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 50%;
+
+    background: #e0e0e0;
+  }
+}
+
+@keyframes materia_portrait {
+  0% {
+    background: #e0e0e0;
+  }
+  50% {
+    border-radius: 4px;
+  }
+  100% {
+    width: 790px;
+    height: 600px;
+    background: #ffffff;
+    border-radius: 4px;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale3d(0, 0, 0);
+  }
+  50%,
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
